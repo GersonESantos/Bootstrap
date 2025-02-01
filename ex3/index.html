@@ -15,57 +15,52 @@
         .section-padding {
             padding: 60px 0;
         }
+        /* Estilo para ícones de contato */
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Minha Página</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
 
     <!-- Seção de Conteúdo -->
-    <section class="bg-custom section-padding">
+    
+
+    <!-- Seção Sobre -->
+    
+
+    <!-- Seção Contato -->
+    <section id="contato" class="bg-light section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1>Olá, bem-vindo à minha página!</h1>
-                    <p class="lead">
-                        Esta é uma página de exemplo usando Bootstrap. Aqui está a minha foto de perfil:
-                    </p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <!-- Substitua "minha_foto.jpg" pelo caminho da sua foto -->
-                    <img src="icons/gernovo.png" alt="Minha Foto de Perfil" class="img-fluid rounded-circle" width="200" height="200">
+            <h2 class="text-center mb-4">Contato</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <ul class="list-unstyled text-center">
+                        <li class="mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="contact-icon">
+                            <a href="https://www.youtube.com/seucanal" target="_blank">YouTube</a>
+                        </li>
+                        <li class="mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" alt="Telefone" class="contact-icon">
+                            <a href="tel:+5511999999999">+55 (11) 99999-9999</a>
+                        </li>
+                        <li class="mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="contact-icon">
+                            <a href="mailto:seuemail@example.com">seuemail@example.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Minha Página. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    
 
     <!-- Bootstrap JS e dependências via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
