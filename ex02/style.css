@@ -1,0 +1,23 @@
+/* style.css */
+
+/* Estilo personalizado para o fundo da seção */
+.bg-custom {
+    background-color: #f8f9fa;
+}
+
+/* Espaçamento adicional para a seção */
+.section-padding {
+    padding: 60px 0;
+}
+
+/* Estilo para ícones de contato */
+.contact-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Ocultar a seção de contato inicialmente */
+#contato {
+    display: none;
+}
