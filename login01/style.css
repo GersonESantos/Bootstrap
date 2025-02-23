@@ -57,3 +57,23 @@ button:hover {
     margin-top: 10px;
     color: red;
 }
+
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.user-name {
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
