@@ -12,15 +12,18 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <main class="form-signin w-100 m-auto">
         <form>
-            <h1 class="h3 mb-3 fw-normal text-center"> faça login</h1>
+            <h1 class="h3 mb-3 fw-normal text-center">Faça login</h1>
 
             <div class="form-floating">
                 <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com" required>
                 <label for="floatingInput">Endereço de e-mail</label>
             </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" required>
+            <div class="form-floating position-relative">
+                <input type="password" class="form-control pe-5" id="floatingPassword" placeholder="Senha" required>
                 <label for="floatingPassword">Senha</label>
+                <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-50 translate-middle-y" id="togglePassword" style="border: none; background: transparent;">
+                    <span class="eye-icon">👁️</span>
+                </button>
             </div>
 
             <div class="form-check text-start my-3">
@@ -40,8 +43,7 @@
             ☀️ <!-- Sol por padrão (light) -->
         </button>
         <ul class="dropdown-menu">
-            <li><
-                a class="dropdown-item" href="#" data-theme="light">☀️ Light</a></li>
+            <li><a class="dropdown-item" href="#" data-theme="light">☀️ Light</a></li>
             <li><a class="dropdown-item" href="#" data-theme="dark">🌙 Dark</a></li>
             <li><a class="dropdown-item" href="#" data-theme="auto">Auto</a></li>
         </ul>

@@ -1,6 +1,7 @@
+// Tema
 const themeButton = document.getElementById('themeButton');
 
-// Função para atualizar o ícone do botão
+// Função para atualizar o ícone do botão de tema
 function updateThemeIcon(theme) {
     if (theme === 'dark') {
         themeButton.innerHTML = '🌙'; // Lua para dark
@@ -34,3 +35,23 @@ if (currentTheme === 'auto') {
 } else {
     updateThemeIcon(currentTheme);
 }
+
+// Mostrar/Esconder Senha com mouse pressionado
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('floatingPassword');
+
+togglePassword.addEventListener('mousedown', () => {
+    passwordInput.setAttribute('type', 'text');
+    togglePassword.querySelector('.eye-icon').textContent = '👁️‍🗨️';
+});
+
+togglePassword.addEventListener('mouseup', () => {
+    passwordInput.setAttribute('type', 'password');
+    togglePassword.querySelector('.eye-icon').textContent = '👁️';
+});
+
+// Para garantir que a senha volte a ser oculta se o mouse sair do botão
+togglePassword.addEventListener('mouseleave', () => {
+    passwordInput.setAttribute('type', 'password');
+    togglePassword.querySelector('.eye-icon').textContent = '👁️';
+});
