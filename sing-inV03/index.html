@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicie sessão em Qwen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* Cor de fundo similar, pode ser ajustada */
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: calc(100% - 40px); /* Ajuste para o ícone */
+            padding: 15px 20px;
+            padding-left: 45px; /* Espaço para o ícone */
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .input-group .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: left;
+            margin-bottom: 25px;
+            color: #666; /* Cor do texto "Esqueceu a {{password}}" */
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background-color: #f0f0f0; /* Cinza claro para o botão "Iniciar sessão" */
+            color: #757575; /* Cor do texto do botão "Iniciar sessão" */
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e0e0e0; /* Um pouco mais escuro no hover */
+        }
+
+        .btn-google,
+        .btn-github {
+            background-color: #f8f9fa; /* Fundo dos botões Google/Github */
+            color: #3c4043; /* Cor do texto dos botões Google/Github */
+            border: 1px solid #dadce0; /* Borda dos botões Google/Github */
+            margin-bottom: 15px;
+            font-weight: 500; /* Peso da fonte um pouco menor */
+        }
+
+        .btn-google:hover,
+        .btn-github:hover {
+            background-color: #f1f3f4; /* Cor de hover dos botões Google/Github */
+        }
+
+
+        .btn img {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+
+        .separator:not(:empty)::before {
+            margin-right: .25em;
+        }
+
+        .separator:not(:empty)::after {
+            margin-left: .25em;
+        }
+
+        .signup-link {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .signup-link a {
+            color: #1877f2; /* Cor azul típica para links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .footer-text a {
+            color: #555; /* Cor dos links do rodapé */
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Ícones (usando Font Awesome como exemplo, você pode substituir por SVGs ou outras fontes de ícones) */
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Inicie sessão em Qwen</h1>
+
+        <form>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Escreva o seu E-mail" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Escreva a sua Senha" required>
+                <i class="fas fa-eye-slash toggle-password" onclick="togglePasswordVisibility()"></i>
+            </div>
+
+            <a href="#" class="forgot-password">Esqueceu a {{password}}</a>
+
+            <button type="submit" class="btn">Iniciar sessão</button>
+        </form>
+
+        <div class="signup-link">
+            Não tem uma conta? <a href="#">Inscrever-se</a>
+        </div>
+
+        <div class="separator">ou</div>
+
+        <button class="btn btn-google">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google logo">
+            Continuar com Google
+        </button>
+        <button class="btn btn-github">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github logo">
+            Continuar com Github
+        </button>
+
+        <p class="footer-text">
+            O seu login constitui a aceitação dos <a href="#">Termos de utilização</a> e <a href="#">Acordo de privacidade</a>
+        </p>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
+</body>
+</html>

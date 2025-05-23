@@ -1,0 +1,69 @@
+// No seu arquivo principal do servidor (ex: app.js ou server.js)
+const express = require('express');
+const { OAuth2Client } = require('google-auth-library'); // Biblioteca do Google
+const bodyParser = require('body-parser'); // Para parsear o corpo da requisição
+
+const app = express();
+const port = 3000; // Ou a porta que você estiver usando
+
+// SEU_CLIENT_ID obtido do Google Cloud Console
+const GOOGLE_CLIENT_ID = 'SEU_CLIENT_ID.apps.googleusercontent.com';
+const client = new OAuth2Client(GOOGLE_CLIENT_ID);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Seu endpoint de redirecionamento configurado no Google Cloud Console
+// e no data-login_uri do frontend
+app.post('/auth/google/callback', async (req, res) => {
+    const idToken = req.body.credential; // O token vem no corpo da requisição como 'credential'
+
+    if (!idToken) {
+        return res.status(400).send('ID token não fornecido.');
+    }
+
+    try {
+        const ticket = await client.verifyIdToken({
+            idToken: idToken,
+            audience: GOOGLE_CLIENT_ID, // Especifique o CLIENT_ID do seu app
+        });
+        const payload = ticket.getPayload();
+        const userid = payload['sub']; // ID único do usuário Google
+        const email = payload['email'];
+        const name = payload['name'];
+        const picture = payload['picture'];
+
+        // Aqui você deve:
+        // 1. Verificar se o usuário com este 'email' ou 'userid' já existe no seu banco de dados.
+        // 2. Se existir, logue o usuário no seu sistema (crie uma sessão, JWT, etc.).
+        // 3. Se não existir, crie um novo usuário no seu banco de dados com as informações obtidas
+        //    e então logue-o.
+
+        console.log('Usuário Google Autenticado:', { userid, email, name, picture });
+
+        // Exemplo: Redirecionar para uma página de sucesso ou dashboard
+        // Em uma SPA, você normalmente enviaria um JWT seu para o cliente
+        res.redirect('/dashboard'); // Ou envie uma resposta JSON
+        // res.json({ success: true, message: "Login com Google bem-sucedido!", user: { email, name } });
+
+    } catch (error) {
+        console.error('Erro ao verificar o ID token do Google:', error);
+        res.status(401).send('Falha na autenticação com Google.');
+    }
+});
+
+// Servir seu HTML (ajuste o caminho conforme necessário)
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/caminho/para/seu/login.html');
+});
+
+app.get('/dashboard', (req, res) => {
+    res.send('Bem-vindo ao Dashboard! (Logado com Google)');
+});
+
+
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Certifique-se que http://localhost:${port} está nas "Origens JavaScript autorizadas"`);
+    console.log(`E que http://localhost:${port}/auth/google/callback está nos "URIs de redirecionamento autorizados" no Google Cloud Console.`);
+});

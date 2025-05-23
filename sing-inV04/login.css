@@ -1,0 +1,30 @@
+body {
+    background-color: #1e1e1e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-control {
+    background-color: #2d2d2d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    background-color: #1677ff;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    min-height: 20px;
+}
