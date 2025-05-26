@@ -1,0 +1,19 @@
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 15px; /* Reduzi a margem inferior para acomodar o novo texto */
+}
+
+/* Estilo para o novo texto de inscrição */
+.signup-link {
+    text-align: center;
+    margin-top: 15px; /* Adiciona um pouco de espaço acima */
+    margin-bottom: 20px; /* Adiciona um pouco de espaço abaixo, antes dos botões de social login */
+}
+
+.signup-link a {
+    font-weight: bold;
+    text-decoration: none;
+}
