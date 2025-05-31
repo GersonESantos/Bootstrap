@@ -85,6 +85,40 @@
            >
 
    
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> {/* MODIFICAÇÃO AQUI */}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signupModalLabel">Criar Nova Conta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formNovoUsuario">
+                        <div class="mb-3">
+                            <label for="signupNome" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id="signupNome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmailModal" class="form-label">Endereço de e-mail</label>
+                            <input type="email" class="form-control" id="signupEmailModal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPasswordModal" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="signupPasswordModal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupConfirmPassword" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" form="formNovoUsuario" class="btn btn-primary">Criar Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="theme-toggle dropdown">
         <button class="btn btn-secondary theme-btn dropdown-toggle" type="button" id="themeButton" data-bs-toggle="dropdown" aria-expanded="false">
