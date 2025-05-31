@@ -82,9 +82,70 @@
                 class="mb-4 d-block mx-auto"
                 height="54"
                 width="72"
-           >
+>
 
-   
+    <div class="form-floating position-relative">
+    <input type="email" class="form-control ps-5" id="floatingInput" placeholder="nome@exemplo.com" required>
+    
+    <label for="floatingInput"> 📧 Endereço de e-mail</label>
+    <span class="position-absolute top-50 start-0 translate-middle-y ms-2 text-muted">
+    </span>
+</div>
+
+            <div class="form-floating position-relative">
+                <input type="password" class="form-control pe-5" id="floatingPassword" placeholder="Senha" required>
+                <label for="floatingPassword">🔑 Senha</label>
+                <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-50 translate-middle-y" id="togglePassword" style="border: none; background: transparent;">
+                    <span class="eye-icon">👁️</span>
+                </button>
+            </div>
+
+            <div class="form-check text-start my-3">
+                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Lembrar-me
+                </label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
+
+            <div class="separator">ou</div>
+
+            <div class="signup-section">
+                Não tem uma conta?
+                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    INSCREVA-SE
+                </button>
+            </div>
+            <button class="btn btn-google w-100 py-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google logo">
+                Continuar com Google
+            </button>
+            <button class="btn btn-github w-100 py-2">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github logo">
+                Continuar com Github
+            </button>
+
+            <p class="footer-text mt-3">
+                O seu login constitui a aceitação dos <a href="#">Termos de utilização</a> e <a href="#">Acordo de privacidade</a>
+            </p>
+
+
+            <p class="mt-5 mb-3 text-body-secondary text-center">© 2025</p>
+        </form>
+    </main>
+
+    <div class="theme-toggle dropdown">
+        <button class="btn btn-secondary theme-btn dropdown-toggle" type="button" id="themeButton" data-bs-toggle="dropdown" aria-expanded="false">
+            ☀️
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" data-theme="light">☀️ Light</a></li>
+            <li><a class="dropdown-item" href="#" data-theme="dark">🌙 Dark</a></li>
+            <li><a class="dropdown-item" href="#" data-theme="auto">Auto</a></li>
+        </ul>
+    </div>
+
+    
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg"> {/* MODIFICAÇÃO AQUI */}
             <div class="modal-content">
@@ -119,26 +180,14 @@
             </div>
         </div>
     </div>
+    ```
 
-    <div class="theme-toggle dropdown">
-        <button class="btn btn-secondary theme-btn dropdown-toggle" type="button" id="themeButton" data-bs-toggle="dropdown" aria-expanded="false">
-            ☀️
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" data-theme="light">☀️ Light</a></li>
-            <li><a class="dropdown-item" href="#" data-theme="dark">🌙 Dark</a></li>
-            <li><a class="dropdown-item" href="#" data-theme="auto">Auto</a></li>
-        </ul>
+
+
+
+
+
     </div>
-
-    
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="login.js"></script>
 </body>
